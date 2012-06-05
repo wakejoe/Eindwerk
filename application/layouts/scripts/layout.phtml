@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Eindwerk</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/screen.css" />
+    </head>
+    <body>
+        
+        <div id="wrapper">
+            
+            <header>
+                <h1 class="hidden"><?= $this->translate('text.header');?></h1>
+                <div id="logo">
+                    <p><a href="#">logo</a><p>
+                </div>
+                <nav>
+                    <h1 class="hidden">Site navigation</h1>
+                    <ul>
+
+                        <?= $this->navigation()->menu(); ?>
+                        
+                    </ul>
+                </nav>
+            </header>
+            
+            <section id="container">
+                
+                <h1 class="hidden">Check our product out!</h1>
+                <div id="teaserPic">
+                    
+                </div>
+                
+                <div id="teaserTxt">
+                    <h1>Your title goes here</h1>
+                    <h2>lihfakjfha, jhsjdfhasjfhd</h2>
+                    <p>
+                        Ut in sunt ut occaecat pork loin, duis jerky nostrud 
+                        swine non qui ground round. Aliquip ribeye tail corned 
+                        beef. Pork chop tenderloin sint pariatur, velit swine 
+                        sed kielbasa hamburger anim. Enim biltong 
+                    </p>
+                </div>
+                
+                
+            </section>
+            
+            <section id="mainContent">
+                
+                <h1 class="hidden">This is the main part of the website</h1>
+                <article id="main">
+                    
+                    <h1 class="hidden">Enjoy our content</h1>
+                    <?php echo $this->layout()->content; ?>
+                    
+                </article>
+            
+            </section>
+            
+            <footer>
+                
+                <h1><?= $this->translate('text.footer'); ?></h1>
+                
+            </footer>
+            
+        </div>
+        
+    </body>
+</html>
