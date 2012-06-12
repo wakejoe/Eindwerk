@@ -12,54 +12,19 @@
             <header>
                 <h1 class="hidden"><?= $this->translate('text.header');?></h1>
                 <div id="logo">
-                    <p><a href="#">logo</a><p>
+                    <p><a href="#"><?= $this->translate('text.header');?></a></p>
                 </div>
                 <nav>
                     <h1 class="hidden">Site navigation</h1>
-                    <ul>
-
-                        <?= $this->navigation()->menu(); ?>
-                        
-                    </ul>
-                </nav>
+                    <?= $this->navigation()->menu(); ?>
+                 </nav>
             </header>
             
-            <section id="container">
-                
-                <h1 class="hidden">Check our product out!</h1>
-                <div id="teaserPic">
-                    
-                </div>
-                
-                <div id="teaserTxt">
-                    <h1>Your title goes here</h1>
-                    <h2>lihfakjfha, jhsjdfhasjfhd</h2>
-                    <p>
-                        Ut in sunt ut occaecat pork loin, duis jerky nostrud 
-                        swine non qui ground round. Aliquip ribeye tail corned 
-                        beef. Pork chop tenderloin sint pariatur, velit swine 
-                        sed kielbasa hamburger anim. Enim biltong 
-                    </p>
-                </div>
-                
-                
-            </section>
-            
-            <section id="mainContent">
-                
-                <h1 class="hidden">This is the main part of the website</h1>
-                <article id="main">
-                    
-                    <h1 class="hidden">Enjoy our content</h1>
-                    <?php echo $this->layout()->content; ?>
-                    
-                </article>
-            
-            </section>
+            <?php echo $this->layout()->content; ?>
             
             <footer>
-                
-                <h1><?= $this->translate('text.footer'); ?></h1>
+                <h1 class="hidden">&copy; Joeri Lambert</h1>
+                <p><?= $this->translate('text.footer'); ?></p>
                 
             </footer>
             

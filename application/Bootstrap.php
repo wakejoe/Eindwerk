@@ -21,6 +21,28 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $view = $layout->getView();
         $view->addHelperPath(realpath(APPLICATION_PATH . '/views/helpers'), 'Application_View_Helper');        
     }
+    
+    public function _initRouter(array $options = null){
+        
+        // get the router
+        $router = $this->getResource('frontController')->getRouter();
+        
+        // add custom route
+        $router->addRoute('lang', 
+                new Zend_Controller_Router_Route(':lang', array(
+                    'controller' => 'index',
+                    'action'     => 'index'
+                )));
+        
+        // add custom route
+        $router->addRoute('page',
+                new Zend_Controller_Router_Route(':lang/pagina/:titleUrl', array(
+                    'controller' => 'page',
+                    'action'     => 'index'
+                )));
+            
+        return $router;
+    }
 
 }
 

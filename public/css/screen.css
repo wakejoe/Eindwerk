@@ -12,14 +12,22 @@ body { margin: 0; background: url(../img/bgBody.jpg) repeat-x, url(../img/bgFoot
 
 .hidden {display: none;}      
 
-#wrapper { width: 950px; margin: 0 auto;}
+#wrapper { width: 950px; margin: 0 auto; margin-top: -18px;}
 
 header { height: 93px; background-color: #303123; float: left; width: 100%;}
 
-#logo { background: url(../img/logo.jpg) no-repeat; height: 50px; }
+#logo { background: url(../img/logo.jpg) no-repeat; height: 50px; width: 300px; margin-right: 0px;}
 #logo p{ height: 50px; width: 133px;}
 
 nav { float: right;}
+
+nav ul { margin-top: -25px;}
+
+nav ul li { display: inline; padding-left: 50px;}
+
+nav ul li a { color: #b5b3b3; text-decoration: none; font-size: 11px; }
+
+nav ul li a:hover { border: 1px solid #b5b3b3; padding: 4px 12px 4px 12px; border-radius: 5px 5px 5px 5px;}
 
 #container {float: left; height: 234px; width: 100%; background: url(../img/bgContainer2.jpg)}
 
@@ -33,4 +41,6 @@ nav { float: right;}
 
 #teaserTxt p {font-family: 'Port Lligat Sans', sans-serif; font-size: 13 px; color: #fff;}
 
-footer {float: left; height: 39px; background-color: #303123; margin-top: 10px;}
+footer {float: left; height: 39px; background-color: #303123; margin-top: 10px; }
+
+footer {  color: #fff; font-size: 10px; font-family: 'Black Ops One', cursive; }
