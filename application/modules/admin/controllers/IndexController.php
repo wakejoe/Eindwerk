@@ -19,12 +19,12 @@ class Admin_IndexController extends Zend_Controller_Action
         $this->view->form = new Admin_Form_Users();
         // controle en mail versturen
         if ($this->getRequest()->isPost())
-        {
+        {die('werk');
             $postParams = $this->getRequest()->getPost();
             
             if ($this->view->form->isValid($postParams)){
                 $params = $this->view->form->getValues();
-                
+                die('werk');
                 $auth = Zend_Auth::getInstance();
                 
                 $authAdapter = new Zend_Auth_Adapter_DbTable(Zend_Registry::get('db'));

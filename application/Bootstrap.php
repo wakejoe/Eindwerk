@@ -6,7 +6,9 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $this->bootstrap('frontController') ; 
         $front = $this->getResource('frontController') ; 
         $front->registerPlugin(new Wakejoe_Translate_Translate()); 
-        $front->registerPlugin(new Wakejoe_Navigation_Navigation()); 
+        $front->registerPlugin(new Wakejoe_Navigation_Navigation());
+        $front->registerPlugin(new Wakejoe_Auth_Acl()); 
+        $front->registerPlugin(new Wakejoe_Auth_Auth());
     } 
     
     public function _initDbAdapter(){

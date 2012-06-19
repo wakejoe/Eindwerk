@@ -3,19 +3,21 @@ class Wakejoe_Auth_Auth extends Zend_Controller_Plugin_Abstract
 {
     public function preDispatch(Zend_Controller_Request_Abstract $request)
     {
+        $loginModule     = 'admin';
         $loginController = 'user';
         $loginAction     = 'login';
         $local           = Zend_Registry::get('Zend_Locale');
-        $auth = Zend_Auth::getInstance();
+        $auth            = Zend_Auth::getInstance();
 
         // If user is not logged in and is not requesting login page
         // - redirect to login page.
         if (!$auth->hasIdentity()
+                && $request->getModuleName()     != $loginModule
                 && $request->getControllerName() != $loginController
                 && $request->getActionName()     != $loginAction) {
 
             $redirector = Zend_Controller_Action_HelperBroker::getStaticHelper('Redirector');
-            $redirector->gotoUrl('/nl_BE/login');
+            $redirector->gotoUrl('/nl_BE/pagina/admin');
         }
 
         // User is logged in or on login page.
