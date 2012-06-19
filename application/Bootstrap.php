@@ -7,8 +7,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
         $front = $this->getResource('frontController') ; 
         $front->registerPlugin(new Wakejoe_Translate_Translate()); 
         $front->registerPlugin(new Wakejoe_Navigation_Navigation());
-        $front->registerPlugin(new Wakejoe_Auth_Acl()); 
-        $front->registerPlugin(new Wakejoe_Auth_Auth());
+        //$front->registerPlugin(new Wakejoe_Auth_Acl()); 
+        //$front->registerPlugin(new Wakejoe_Auth_Auth());
     } 
     
     public function _initDbAdapter(){
@@ -52,8 +52,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                 )));
         
         // add admin route
-        $router->addRoute('admin',
+        /*$router->addRoute('admin',
                 new Zend_Controller_Router_Route(':lang/pagina/admin', array(
+                    'module'     => 'admin',
+                    'controller' => 'index',
+                    'action'     => 'index'
+                )));*/
+        
+        // add admin route
+        $router->addRoute('admin',
+                new Zend_Controller_Router_Route('admin/:controller/:action', array(
                     'module'     => 'admin',
                     'controller' => 'index',
                     'action'     => 'index'
