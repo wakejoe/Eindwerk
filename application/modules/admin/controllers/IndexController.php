@@ -15,8 +15,8 @@ class Admin_IndexController extends Zend_Controller_Action
     
     public function loginAction()
     {
-        $this->view->form = New Application_Form_Users();
-        
+      
+        $this->view->form = new Admin_Form_Users();
         // controle en mail versturen
         if ($this->getRequest()->isPost())
         {
@@ -43,7 +43,7 @@ class Admin_IndexController extends Zend_Controller_Action
                     echo 'ingelogd als ' . $identity;
                     
                 } else {
-                    
+                    die('ér niet door');
                     foreach($result->getMessages() as $message) {
                         
                         echo $message;
