@@ -8,7 +8,7 @@ class Admin_Form_Users extends Zend_Form
         //create form
         $this->setMethod('post');
         $this->setAttrib('enctype', 'multipart/form-data');
-        $this->setAction('login');
+        $this->setAction('admin');
         
         //first name
         $this->addElement(new Zend_Form_Element_Text('login', array(

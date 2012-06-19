@@ -23,9 +23,10 @@ class Wakejoe_Navigation_Navigation extends Zend_Controller_Plugin_Abstract
         }
         $admin = new Zend_Navigation_Page_Mvc(array(
             'label'      => 'Admin',
-            'action'     => 'index',   
-            'controller' => 'index',
-            'module'     => 'admin'
+            'route'      => 'admin',
+            'module'     => 'admin',
+            'params'     => array('titleUrl' => 'admin',
+                                          'lang' => $local)
             
         ));
         $container->addPage($admin);
