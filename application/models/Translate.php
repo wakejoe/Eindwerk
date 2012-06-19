@@ -17,5 +17,6 @@ class Application_Model_Translate extends Zend_Db_Table_Abstract
         $result = $this->fetchAll($select);
         return $result;
     }
+    
 }
 

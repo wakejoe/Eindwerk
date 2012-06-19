@@ -40,6 +40,15 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                     'controller' => 'page',
                     'action'     => 'index'
                 )));
+        
+        // add admin route
+        $router->addRoute('admin',
+                new Zend_Controller_Router_Route(':lang/pagina/admin', array(
+                    'module'     => 'admin',
+                    'controller' => 'index',
+                    'action'     => 'index'
+                )));
+        
             
         return $router;
     }

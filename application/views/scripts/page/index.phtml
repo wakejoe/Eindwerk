@@ -1,3 +1,30 @@
-<h1><?= $this->page->title ?></h1>
+<section id="container">
+                
+    <h1 class="hidden">Check our product out!</h1>
+    <div id="teaserPic">
+        <figure>
+            <img src='<?= $this->translate($this->title.'.teaserPicUrl'); ?>' alt='<?= $this->translate($this->title.'.teaserPicAlt'); ?>' />
+        </figure>
+    </div>
 
-<p><?= $this->page->description ?></p>
+    <div id="teaserTxt">
+        <h1><?= $this->translate($this->title.'.teaserTitle'); ?></h1>
+        <h2><?= $this->translate($this->title.'.teaserSubtitle'); ?></h2>
+        <p>
+            <?= $this->translate($this->title.'.teaserTxt'); ?> 
+        </p>
+    </div>
+
+
+</section>
+
+<section id="mainContent">
+
+    <h1 class="hidden">This is the main part of the website</h1>
+    <article id="main">
+
+        <h1><?= $this->translate($this->title.'.title'); ?></h1>
+        <p><?= $this->translate($this->title.'.txt'); ?></p>
+    </article>
+
+</section>
