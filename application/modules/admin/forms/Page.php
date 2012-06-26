@@ -45,12 +45,14 @@ class Admin_Form_Page extends Zend_Form
         $this->addElement($menu);
         $this->addElement($status);
         
-        //description
-        $this->addElement(new Zend_Form_Element_Text('country', array(
-            'label' => 'label.country',
-            'filters' => array('stringTrim'),
-            'required =>' => true
-        )));
+        $country = new Zend_Form_Element_Select('country');
+
+        $country ->setLabel('label.country')
+            ->addMultiOptions(array(
+                    'nl_BE' => 'Nederlands',
+                    'nl_FR' => 'Frans'
+            ));
+        $this->addElement($country);
         
         /*
          * CONTENT STUK
