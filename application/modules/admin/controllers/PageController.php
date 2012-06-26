@@ -5,7 +5,7 @@ class Admin_PageController extends Zend_Controller_Action
 
     public function init()
     {
-        /* Initialize action controller here */
+       $this->_redirector = $this->_helper->getHelper('Redirector');
     }
 
     public function indexAction()
@@ -114,7 +114,12 @@ class Admin_PageController extends Zend_Controller_Action
                         'local'         => $params['country']
                     );
                     $modelTranslate->insert($valuesTeaserPicAlt);
-                        
+                    
+/*                    $this->_redirector->setCode(303)
+                          ->setExit(false)
+                          ->setGotoSimple("", "pagina", "");  
+                    $this->_redirector->redirect();
+*/                      
                 } else {
                     
                         echo '<pre>';
