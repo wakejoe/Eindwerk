@@ -10,6 +10,7 @@ class Admin_IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
+        $this->_redirector = $this->_helper->getHelper('Redirector');
         $this->loginAction();
     }
     
@@ -19,12 +20,12 @@ class Admin_IndexController extends Zend_Controller_Action
         $this->view->form = new Admin_Form_Users();
         // controle en mail versturen
         if ($this->getRequest()->isPost())
-        {die('werk');
+        {
             $postParams = $this->getRequest()->getPost();
             
             if ($this->view->form->isValid($postParams)){
                 $params = $this->view->form->getValues();
-                die('werk');
+                
                 $auth = Zend_Auth::getInstance();
                 
                 $authAdapter = new Zend_Auth_Adapter_DbTable(Zend_Registry::get('db'));
@@ -41,9 +42,17 @@ class Admin_IndexController extends Zend_Controller_Action
                     
                     $identity = Zend_Auth::getInstance()->getIdentity();
                     echo 'ingelogd als ' . $identity;
+                    $this->_redirector->setCode(303)
+                          ->setExit(false)
+                          ->setGotoSimple("add",
+                                          "page",
+                                          "admin"
+                    );
+                    
+                    $this->_redirector->redirect();
                     
                 } else {
-                    die('ér niet door');
+                    
                     foreach($result->getMessages() as $message) {
                         
                         echo $message;

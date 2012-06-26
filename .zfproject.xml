@@ -37,18 +37,33 @@
             <controllerFile controllerName="Index">
               <actionMethod actionName="index"/>
             </controllerFile>
+            <controllerFile controllerName="Page">
+              <actionMethod actionName="index"/>
+              <actionMethod actionName="add"/>
+            </controllerFile>
           </controllersDirectory>
           <formsDirectory>
             <formFile formName="Users"/>
+            <formFile formName="Page"/>
           </formsDirectory>
           <layoutsDirectory enabled="false">
             <layoutScriptsDirectory enabled="false"/>
           </layoutsDirectory>
-          <modelsDirectory/>
+          <modelsDirectory>
+            <modelFile modelName="Page"/>
+            <modelFile modelName="Pagelocal"/>
+            <modelFile modelName="Translate"/>
+          </modelsDirectory>
           <viewsDirectory>
             <viewScriptsDirectory>
               <viewControllerScriptsDirectory forControllerName="Index">
                 <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Page">
+                <viewScriptFile forActionName="index"/>
+              </viewControllerScriptsDirectory>
+              <viewControllerScriptsDirectory forControllerName="Page">
+                <viewScriptFile forActionName="add"/>
               </viewControllerScriptsDirectory>
             </viewScriptsDirectory>
             <viewHelpersDirectory/>
